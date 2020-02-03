@@ -23,7 +23,7 @@ begin
 
      write(fo,A[1],'/',A[2]);
 
-    { write(fo,A[1] div A[2],' ',A[1] mod A[2],' ',A[2]);
+    {write(fo,A[1] div A[2],' ',A[1] mod A[2],' ',A[2]);
       Ket qua cua bai se de duoi dang hon so}
 
      close(fi);close(fo);
