@@ -1,6 +1,6 @@
 var fi,fo:text;
-    tam,stNp,yMaxString: string;
-    valNP,s,a,i,valTam,yMax : longint;
+    tam,stNp: string;
+    s,a,i,valTam,dem : longint;
     code : integer;
 begin
      assign(fi,'input.txt');assign(fo,'output.txt');
@@ -16,16 +16,22 @@ begin
      end;
      writeln(fo,stNP);
 {b}
-     VAL(stNP,valNP,code);
-     while valNP > yMax do yMax := valNP*10; yMax := yMax div 10;
-     write(fo,yMax);
-     STR(yMax,yMaxString);
-     for i := 1 to length(yMaxString) do
+     dem:=1;
+     for i:= 1 to length(stNp) do
      begin
-          VAL(yMaxString[i],valTam,code);
-          s := s*2+ valTam;
+          if stNp[i] = '1' then
+          begin
+              stNp[i] := '0';stNp[dem] := '1';
+              dem:= dem +1;
+          end;
      end;
 
+     for i := 1 to length(stNp) do
+     begin
+          VAL(stNp[i],valTam,code);
+          s := s*2+ valTam;
+     end;
+     write(fo,s);
 
      close(fi);close(fo);
 end.
