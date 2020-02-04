@@ -8,9 +8,9 @@ begin
      
      dem:=0;
      for i:= 1 to n do
-         if i>=k or i>=m then
+         if (i>=k) or (i>=m) then
             begin
-                if i mod k = 0 or i mod m = 0 then dem:=dem + 1
+                if (i mod k = 0) or (i mod m = 0) then dem:=dem + 1
             end;
     
      write(fo,dem);
